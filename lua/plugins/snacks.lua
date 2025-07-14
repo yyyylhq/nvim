@@ -38,7 +38,7 @@ return {
             },
 
             animate = {
-                enabled = vim.fn.has("nvim-0.10") == 1,
+                --enabled = vim.fn.has("nvim-0.10") == 1,
                 enabled = true,
 
                 --style = "out",
