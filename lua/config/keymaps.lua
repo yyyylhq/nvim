@@ -23,3 +23,27 @@ vim.keymap.set({ "n", "v" }, "<C-w>i", "<C-w>l", { silent = true })
 
 vim.keymap.set({ "n" }, "<C-s>", ":w<CR>", { silent = true })
 vim.keymap.set({ "i" }, "<C-s>", "<ESC>:w<CR>i", { silent = true })
+
+vim.keymap.set(
+    { "n" },
+    "<leader>bid",
+    function()
+        local winid = vim.api.nvim_get_current_buf()
+
+        print("Current buffer ID：" .. winid)
+        -- vim.notify("Current buffer ID：" .. winid)
+    end,
+    { desc = "Show current buffer ID" }
+)
+
+vim.keymap.set(
+    { "n" },
+    "<leader>wid",
+    function()
+        local winid = vim.api.nvim_get_current_win()
+
+        print("Current window ID：" .. winid)
+        -- vim.notify("Current window ID：" .. winid)
+    end,
+    { desc = "Show current window ID" }
+)
