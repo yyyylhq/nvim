@@ -5,6 +5,10 @@ return {
     lazy = false,
 
     opts = {
+        animate = {
+            easing = "linear",
+        },
+
         bigfile = { enabled = true },
 
         dashboard = { enabled = true},
