@@ -6,10 +6,34 @@ return {
 
     opts = {
         animate = {
+            duration = 20, -- ms per step
             easing = "linear",
+            fps = 60,
         },
 
-        bigfile = { enabled = true },
+        bigfile = {
+            enabled = true,
+            notify = true, -- 检测到大文件时显示通知
+            size = 1.5 * 1024 * 1024, -- 1.5MB（文件大小阈值）
+            line_length = 1000, -- 平均行长度（对压缩文件有用）
+
+            -- 检测到大文件时启用或禁用某些功能
+            ---@param ctx {buf: number, ft:string}
+            setup = function(ctx)
+                if vim.fn.exists(":NoMatchParen") ~= 0 then
+                  vim.cmd([[NoMatchParen]])
+                end
+                Snacks.util.wo(0, { foldmethod = "manual", statuscolumn = "", conceallevel = 0 })
+                vim.b.minianimate_disable = true
+                vim.schedule(
+                    function()
+                        if vim.api.nvim_buf_is_valid(ctx.buf) then
+                            vim.bo[ctx.buf].syntax = ctx.ft
+                        end
+                    end
+                )
+            end,
+        },
 
         dashboard = { enabled = true},
         -- dashboard = { enabled = true, example = "github" },
