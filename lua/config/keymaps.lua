@@ -28,21 +28,12 @@ vim.keymap.set(
     { "n" },
     "<leader>bid",
     function()
-<<<<<<< HEAD
-        local bufid = vim.api.nvim_get_current_buf()
-        vim.notify("Current buffer ID：" .. bufid)
-    end,
-    {
-        desc = "Show current buffer ID",
-    }
-=======
         local winid = vim.api.nvim_get_current_buf()
 
         print("Current buffer ID：" .. winid)
         -- vim.notify("Current buffer ID：" .. winid)
     end,
     { desc = "Show current buffer ID" }
->>>>>>> 1604672f25ec123ee6fb37c1a8d2998d41604ddf
 )
 
 vim.keymap.set(
@@ -50,17 +41,9 @@ vim.keymap.set(
     "<leader>wid",
     function()
         local winid = vim.api.nvim_get_current_win()
-<<<<<<< HEAD
-        vim.notify("Current win ID：" .. winid)
-    end,
-    {
-        desc = "Show current win ID",
-    }
-=======
 
         print("Current window ID：" .. winid)
-        -- vim.notify("Current window ID：" .. winid)
+        -- vim.notify("Current win ID：" .. winid)
     end,
-    { desc = "Show current window ID" }
->>>>>>> 1604672f25ec123ee6fb37c1a8d2998d41604ddf
+    { desc = "Show current win ID" }
 )

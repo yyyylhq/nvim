@@ -15,11 +15,7 @@ return {
 
         actions = {
             open_file = {
-<<<<<<< HEAD
-                -- quit_on_open = true,
-=======
                 quit_on_open = false,
->>>>>>> 1604672f25ec123ee6fb37c1a8d2998d41604ddf
             },
         },
 
