@@ -24,6 +24,9 @@ vim.keymap.set({ "n", "v" }, "<C-w>i", "<C-w>l", { silent = true })
 vim.keymap.set({ "n" }, "<C-s>", ":w<CR>", { silent = true })
 vim.keymap.set({ "i" }, "<C-s>", "<ESC>:w<CR>i", { silent = true })
 
+vim.keymap.set({ "n" }, "k", "n", { silent = true })
+vim.keymap.set({ "n" }, "K", "N", { silent = true })
+
 vim.keymap.set(
     { "n" },
     "<leader>bid",
