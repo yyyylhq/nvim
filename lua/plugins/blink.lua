@@ -14,6 +14,9 @@ vim.pack.add(
     }
 )
 
+local cmp = require('blink.cmp')
+cmp.build():pwait()
+
 require("blink.cmp").setup({
     keymap = {
         preset = "default",
